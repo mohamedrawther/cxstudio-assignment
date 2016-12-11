@@ -1,0 +1,8 @@
+com\cxstudio\validationapi\model\CountryCodeDetail.class
+com\cxstudio\validationapi\util\PhoneNumberValidationUtil.class
+com\cxstudio\validationapi\model\PhoneNumberDetail.class
+com\cxstudio\validationapi\ValidationApplication.class
+com\cxstudio\validationapi\util\CsvFileReaderUtil.class
+com\cxstudio\validationapi\util\CountryCodeSortingUtil.class
+com\cxstudio\validationapi\endpoint\rest\PhoneNumberController.class
+com\cxstudio\validationapi\validation\PhoneNumberValidator.class

@@ -1,0 +1,3 @@
+com\cxstudio\validationapi\model\PhoneNumberDetailTest.class
+com\cxstudio\validationapi\endpoint\rest\PhoneNumberControllerTest.class
+com\cxstudio\validationapi\util\PhoneNumberToJsonConversionFunction.class
