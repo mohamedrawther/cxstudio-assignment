@@ -88,6 +88,7 @@ public class PhoneNumberController {
 	@RequestMapping(value = "/countryCodes")
 	public List<String> findAllCountryCodes(@RequestParam(name = "countryLanguageCode") String countryLanguageCode) {
 		//getCountryCodeDetails(countryCodeCsvFileName).forEach((String s) -> System.out.println(s));
+		// sorting countrycode by countryName language
 		return getCountryCodeDetails(countryCodeCsvFileName).stream().sorted(getComparator(countryLanguageCode))
 				.collect(Collectors.toList());		
 	}
