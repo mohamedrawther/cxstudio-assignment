@@ -1,5 +1,13 @@
 package com.cxstudio.validationapi.endpoint.rest;
 
+import static com.cxstudio.validationapi.util.PhoneNumberToJsonConversionFunction.phoneNumberObjToJson;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Matchers.anyString;
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,24 +15,12 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultHandler;
 
 import com.cxstudio.validationapi.model.PhoneNumberDetail;
 import com.cxstudio.validationapi.validation.PhoneNumberValidator;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-import java.util.function.Function;
-
-import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
-import static org.mockito.BDDMockito.*;
-import static com.cxstudio.validationapi.util.PhoneNumberToJsonConversionFunction.phoneNumberObjToJson;
 
 /**
- * Verifying ContactDetailsController functionality is working properly. Spring
+ * Verifying PhoneNumberController functionality is working properly. Spring
  * Test API used to test the controller functionality. The following are the
  * testing objectives. 1. Accepting HTTP GET/POST/etc request 2. Verify
  * ContentType APPLICATION_JSON_VALUE 3. Verify Response Status 4. Verify URL
@@ -44,7 +40,7 @@ public class PhoneNumberControllerTest {
 	private PhoneNumberValidator phoneNumberValidator;
 
 	/**
-	 * 
+	 * Testing invalid request by sending invalid URL
 	 * @throws Exception
 	 */
 	@Test
@@ -55,13 +51,13 @@ public class PhoneNumberControllerTest {
 	}
 		
 	/**
-	 * 
+	 * Testing invalid phone number validation, validation is mocked and considered as invalid
+	 * by mocking validator.validate return false.
 	 * @throws Exception
 	 */
 	@Test
 	public void testPhoneNumberValidationResponseContentWhenCorrectURLAndRequestParam() throws Exception {
-		PhoneNumberDetail expectedPhoneNumberValidation = new PhoneNumberDetail("44716390", "NZ");
-		expectedPhoneNumberValidation.setValid(false);
+		PhoneNumberDetail expectedPhoneNumberValidation = new PhoneNumberDetail("44716390", "NZ", false, null);
 		given(phoneNumberValidator.validate(anyString(), anyString())).willReturn(false);
 		this.mvc.perform(
 				get("/phoneNumber/validate?phoneNumber=44716390&isoCountryCode=NZ").accept(APPLICATION_JSON_UTF8_VALUE))
@@ -71,14 +67,13 @@ public class PhoneNumberControllerTest {
 	}
 	
 	/**
-	 * 
+	 * Testing valid phone number validation, validation is mocked and considered as valid
+	 * by mocking validator.validate return true.
 	 * @throws Exception
 	 */
 	@Test
 	public void testPhoneNumberValidationResponseWhenValidPhoneNumber() throws Exception {
-		PhoneNumberDetail expectedPhoneNumberValidation = new PhoneNumberDetail("+52 1 55 4142 3370", "MX");
-		expectedPhoneNumberValidation.setValid(true);
-		expectedPhoneNumberValidation.setGeoLocation("");
+		PhoneNumberDetail expectedPhoneNumberValidation = new PhoneNumberDetail("+52 1 55 4142 3370", "MX", true, "Mexico");
 		given(phoneNumberValidator.validate(anyString(), anyString())).willReturn(true);
 		this.mvc.perform(
 				get("/phoneNumber/validate?phoneNumber=5215541423370&isoCountryCode=MX").accept(APPLICATION_JSON_UTF8_VALUE))

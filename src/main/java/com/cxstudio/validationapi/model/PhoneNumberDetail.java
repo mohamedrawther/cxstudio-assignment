@@ -1,8 +1,8 @@
 package com.cxstudio.validationapi.model;
 
 /**
- * Plain POJO to utilize data transfer across layer.
- * This class contains contact details
+ * Plain POJO utilize to phone number detail transfer across layer.
+ * 
  * @author Mohamed
  *
  */
@@ -25,6 +25,13 @@ public class PhoneNumberDetail {
 		this.isoCountryCode = isoCountryCode;
 	}
 
+	public PhoneNumberDetail(String phoneNumber, String isoCountryCode, boolean valid, String geolocation){
+		this.phoneNumber = phoneNumber;
+		this.isoCountryCode = isoCountryCode;
+		this.valid = valid;
+		this.geoLocation = geolocation;
+	}
+	
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}

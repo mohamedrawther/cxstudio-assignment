@@ -1,9 +1,7 @@
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\model\PhoneNumberDetail.java
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\util\CountryCodeSortingUtil.java
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\model\CountryCodeDetail.java
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\endpoint\rest\PhoneNumberController.java
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\util\PhoneNumberValidationUtil.java
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\util\comparator\CountryCodeComparator.java
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\validation\PhoneNumberValidator.java
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\util\CsvFileReaderUtil.java
-C:\Localdata\workspace\cxstudio\validationapi\src\main\java\com\cxstudio\validationapi\ValidationApplication.java
+C:\Localdata\workspace\cxstudio\validationapi_assign\cxstudio-assignment\src\main\java\com\cxstudio\validationapi\util\CsvFileReaderUtil.java
+C:\Localdata\workspace\cxstudio\validationapi_assign\cxstudio-assignment\src\main\java\com\cxstudio\validationapi\util\comparator\CountryCodeComparator.java
+C:\Localdata\workspace\cxstudio\validationapi_assign\cxstudio-assignment\src\main\java\com\cxstudio\validationapi\ValidationApplication.java
+C:\Localdata\workspace\cxstudio\validationapi_assign\cxstudio-assignment\src\main\java\com\cxstudio\validationapi\validation\PhoneNumberValidator.java
+C:\Localdata\workspace\cxstudio\validationapi_assign\cxstudio-assignment\src\main\java\com\cxstudio\validationapi\endpoint\rest\PhoneNumberController.java
+C:\Localdata\workspace\cxstudio\validationapi_assign\cxstudio-assignment\src\main\java\com\cxstudio\validationapi\model\PhoneNumberDetail.java
+C:\Localdata\workspace\cxstudio\validationapi_assign\cxstudio-assignment\src\main\java\com\cxstudio\validationapi\util\PhoneNumberValidationUtil.java

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class PhoneNumberValidator {
 
 	/**
-	 * validating contact number which is compliance, one of the mobile number
+	 * validating phone number which is compliance, one of the mobile number
 	 * or phone number
 	 * 
 	 * @param phoneNumber
